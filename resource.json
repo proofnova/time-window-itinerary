@@ -69,18 +69,22 @@
       "Korean"
     ],
     "queries": [
-      "Time-window itinerary solver",
-      "time window itinerary",
-      "이동 시간·방문 가능 시간·체류·예산을 지키며 모든 방문을 마치는 최단 일정을 찾는다.",
-      "or-tools",
-      "or-tools-routing"
+      "time window itinerary routing opening hours budget 방문 경로 시간창"
     ],
     "scope": "Primary documentation and repository descriptions were read on the public web. Competitor code, plugins and packaged execution were not exhaustively tested. This is a bounded prior-art review, not a worldwide novelty search.",
     "limitations": [
       "Search results and documentation do not establish universal absence.",
       "Competitor configuration/plugin parity is not exhausted.",
       "No independent end-user interview or deployment evidence."
-    ]
+    ],
+    "proposed_queries": [
+      "Time-window itinerary solver",
+      "time window itinerary",
+      "이동 시간·방문 가능 시간·체류·예산을 지키며 모든 방문을 마치는 최단 일정을 찾는다.",
+      "or-tools",
+      "or-tools-routing"
+    ],
+    "query_scope": "One actual bilingual search per resource, grouped in shared cached batches; additional suggested terms are explicitly proposed, not executed."
   },
   "checked_at": "2026-10-24",
   "distinctive_capability": "Bounded exact time-window search with waiting, asymmetric travel and explicit optimality. An offline executable can be called by a small model and checked against an explicit task contract.",
@@ -106,7 +110,8 @@
   "validation_results": {
     "worked_cases": 1,
     "evaluation_cases": 1,
-    "root_required_field_rejection": true
+    "root_required_field_rejection": true,
+    "fixture_role": "Development regression fixtures; not an untouched final model evaluation set."
   },
   "external_impact_evidence": [],
   "decision": {

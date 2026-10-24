@@ -23,7 +23,7 @@ Nearest-first routing can miss a closing window; search exhaustion cannot prove 
 
 Import `execute` from `./run.mjs`. Expose this declared tool to your model, validate its tool name/input contract, execute it, and retain the returned JSON and input digest. Calculations and constraint checks are performed by the resource. No paid model or new agent framework is required.
 
-[SKILL.md](SKILL.md) contains the workflow, interpretation and recovery procedure. [example.json](example.json) is a complete input; [cases.json](cases.json) contains worked and held-out synthetic checks. The website executes the same code locally in a bounded Worker. It has no model or external data upload.
+[SKILL.md](SKILL.md) contains the workflow, interpretation and recovery procedure. [example.json](example.json) is a complete input; [cases.json](cases.json) contains worked and edge-case synthetic regression checks. The website executes the same code locally in a bounded Worker. It has no model or external data upload.
 
 ## Recovery and limits
 
@@ -36,3 +36,7 @@ Underlying algorithms and task outcomes already exist in the alternatives. An ex
 Open an issue with a synthetic/redacted failing JSON input, expected result and Node version. Add a regression test and run `npm test`. Never include credentials or real private records in public examples.
 
 MIT · Proofnova · 2026
+
+## Measured worked-example comparison
+
+See [workflow-benchmark.json](workflow-benchmark.json) for executed inputs, baseline algorithm and full output. Nearest-first misses stop b’s closing window; exact search completes both stops at minute 6. This is one synthetic worked example, not a model-accuracy result or a claim about typical real-world savings.

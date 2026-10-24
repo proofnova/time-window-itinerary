@@ -1,0 +1,92 @@
+{
+  "checked_at": "2026-10-24T04:34:51.173Z",
+  "not_a_model_benchmark": true,
+  "resource": "time-window-itinerary",
+  "example": "earliest closing must precede nearer stop",
+  "input": {
+    "stops": [
+      {
+        "id": "a",
+        "open": 0,
+        "close": 10,
+        "duration": 2,
+        "cost": 1
+      },
+      {
+        "id": "b",
+        "open": 0,
+        "close": 4,
+        "duration": 1,
+        "cost": 1
+      }
+    ],
+    "travel_minutes": [
+      [
+        0,
+        1,
+        2
+      ],
+      [
+        1,
+        0,
+        3
+      ],
+      [
+        2,
+        1,
+        0
+      ]
+    ],
+    "start_minute": 0,
+    "end_minute": 15,
+    "budget": 3
+  },
+  "metric": "all supplied visit windows satisfied",
+  "baseline": {
+    "algorithm": "nearest unvisited stop first",
+    "feasible": false,
+    "failed_stop": "b",
+    "visited": [
+      "a"
+    ]
+  },
+  "candidate": {
+    "algorithm": "bounded exact time-window search",
+    "feasible": true,
+    "finish_minute": 6,
+    "full_result": {
+      "feasible": true,
+      "optimal": true,
+      "route": [
+        {
+          "id": "b",
+          "arrival": 2,
+          "start": 2,
+          "end": 3,
+          "wait": 0,
+          "travel": 2
+        },
+        {
+          "id": "a",
+          "arrival": 4,
+          "start": 4,
+          "end": 6,
+          "wait": 0,
+          "travel": 1
+        }
+      ],
+      "finish_minute": 6,
+      "cost": 2,
+      "budget_exceeded": false,
+      "summary": {
+        "feasible": true,
+        "visits": 2,
+        "finish": 6,
+        "cost": 2,
+        "optimal": true
+      },
+      "scope": "Uses supplied travel times and opening windows; no live map or venue availability is inferred."
+    }
+  },
+  "scope": "One synthetic counterexample; does not establish general routing superiority, live travel accuracy or new algorithmic invention."
+}
